@@ -93,7 +93,7 @@ def MergedDF(symbol, timeframe):
             df_1.rename(columns={'tp_4':'tp_1_4'}, inplace=True)
             df_1.rename(columns={'tp_5':'tp_1_5'}, inplace=True)
 
-            grosses_couilles = df_1.merge(df_2[['signal_2', 'sl_2', 'tp_2_1', 'tp_2_2', 'tp_2_3', 'tp_2_4', 'tp_2_5']], left_index=True, right_index=True, how='left') \
+            df_final = df_1.merge(df_2[['signal_2', 'sl_2', 'tp_2_1', 'tp_2_2', 'tp_2_3', 'tp_2_4', 'tp_2_5']], left_index=True, right_index=True, how='left') \
             .merge(df_3[['signal_3', 'sl_3', 'tp_3_1', 'tp_3_2', 'tp_3_3', 'tp_3_4', 'tp_3_5']], left_index=True, right_index=True, how='left') \
         
         elif symbol == 'GBPUSD':
@@ -126,7 +126,7 @@ def MergedDF(symbol, timeframe):
             df_1.rename(columns={'tp_4':'tp_1_4'}, inplace=True)
             df_1.rename(columns={'tp_5':'tp_1_5'}, inplace=True)
 
-            grosses_couilles = df_1.merge(df_2[['signal_2', 'sl_2', 'tp_2_1', 'tp_2_2', 'tp_2_3', 'tp_2_4', 'tp_2_5']], left_index=True, right_index=True, how='left') \
+            df_final = df_1.merge(df_2[['signal_2', 'sl_2', 'tp_2_1', 'tp_2_2', 'tp_2_3', 'tp_2_4', 'tp_2_5']], left_index=True, right_index=True, how='left') \
             .merge(df_3[['signal_3', 'sl_3', 'tp_3_1', 'tp_3_2', 'tp_3_3', 'tp_3_4', 'tp_3_5']], left_index=True, right_index=True, how='left')       
         
     elif timeframe == 'M15':
@@ -159,7 +159,7 @@ def MergedDF(symbol, timeframe):
             df_1.rename(columns={'tp_4':'tp_1_4'}, inplace=True)
             df_1.rename(columns={'tp_5':'tp_1_5'}, inplace=True)
 
-            grosses_couilles = df_1.merge(df_2[['signal_2', 'sl_2', 'tp_2_1', 'tp_2_2', 'tp_2_3', 'tp_2_4', 'tp_2_5']], left_index=True, right_index=True, how='left') \
+            df_final = df_1.merge(df_2[['signal_2', 'sl_2', 'tp_2_1', 'tp_2_2', 'tp_2_3', 'tp_2_4', 'tp_2_5']], left_index=True, right_index=True, how='left') \
             .merge(df_3[['signal_3', 'sl_3', 'tp_3_1', 'tp_3_2', 'tp_3_3', 'tp_3_4', 'tp_3_5']], left_index=True, right_index=True, how='left') 
             
         elif symbol == 'GBPUSD':
@@ -190,7 +190,7 @@ def MergedDF(symbol, timeframe):
             df_1.rename(columns={'tp_4':'tp_1_4'}, inplace=True)
             df_1.rename(columns={'tp_5':'tp_1_5'}, inplace=True)
 
-            grosses_couilles = df_1.merge(df_2[['signal_2', 'sl_2', 'tp_2_1', 'tp_2_2', 'tp_2_3', 'tp_2_4', 'tp_2_5']], left_index=True, right_index=True, how='left') \
+            df_final = df_1.merge(df_2[['signal_2', 'sl_2', 'tp_2_1', 'tp_2_2', 'tp_2_3', 'tp_2_4', 'tp_2_5']], left_index=True, right_index=True, how='left') \
             .merge(df_3[['signal_3', 'sl_3', 'tp_3_1', 'tp_3_2', 'tp_3_3', 'tp_3_4', 'tp_3_5']], left_index=True, right_index=True, how='left') \
 
     elif timeframe == 'M5':
@@ -215,7 +215,7 @@ def MergedDF(symbol, timeframe):
             df_3.rename(columns={'tp_4':'tp_3_4'}, inplace=True)
             df_3.rename(columns={'tp_5':'tp_3_5'}, inplace=True)
 
-            grosses_couilles = df_2.merge(df_3[['signal_3', 'sl_3', 'tp_3_1', 'tp_3_2', 'tp_3_3', 'tp_3_4', 'tp_3_5']], left_index=True, right_index=True, how='left')\
+            df_final = df_2.merge(df_3[['signal_3', 'sl_3', 'tp_3_1', 'tp_3_2', 'tp_3_3', 'tp_3_4', 'tp_3_5']], left_index=True, right_index=True, how='left')\
                 
         elif symbol == 'GBPUSD':
 
@@ -237,6 +237,6 @@ def MergedDF(symbol, timeframe):
             df_3.rename(columns={'tp_4':'tp_3_4'}, inplace=True)
             df_3.rename(columns={'tp_5':'tp_3_5'}, inplace=True)
 
-            grosses_couilles = df_2.merge(df_3[['signal_3', 'sl_3', 'tp_3_1', 'tp_3_2', 'tp_3_3', 'tp_3_4', 'tp_3_5']], left_index=True, right_index=True, how='left')\
+            df_final = df_2.merge(df_3[['signal_3', 'sl_3', 'tp_3_1', 'tp_3_2', 'tp_3_3', 'tp_3_4', 'tp_3_5']], left_index=True, right_index=True, how='left')\
 
-    return grosses_couilles
+    return df_final
